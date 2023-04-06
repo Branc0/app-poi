@@ -1,0 +1,8 @@
+<google-map
+  *ngIf="poi$ | async as poi"
+  [center]="poi"
+  height="600px"
+  width="auto"
+>
+  <map-marker [position]="poi"></map-marker>
+</google-map>

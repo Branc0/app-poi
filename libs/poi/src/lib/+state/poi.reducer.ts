@@ -30,7 +30,11 @@ const poiReducer = createReducer(
   on(PoiActions.loadPoiSuccess, (state, { poi }) =>
     poiAdapter.setAll(poi, { ...state, loaded: true })
   ),
-  on(PoiActions.loadPoiFailure, (state, { error }) => ({ ...state, error }))
+  on(PoiActions.loadPoiFailure, (state, { error }) => ({ ...state, error })),
+  on(PoiActions.selectPoi, (state, { poiId }) => ({
+    ...state,
+    selectedId: poiId,
+  }))
 );
 
 export function reducer(state: State | undefined, action: Action) {
