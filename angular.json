@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "tour": "apps/tour",
-    "tour-e2e": "apps/tour-e2e"
+    "tour-e2e": "apps/tour-e2e",
+    "visitor": "libs/visitor"
   }
 }
