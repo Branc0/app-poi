@@ -4,5 +4,20 @@
   height="600px"
   width="auto"
 >
-  <map-marker [position]="poi"></map-marker>
+  <map-marker
+    #marker="mapMarker"
+    [position]="poi"
+    (mapClick)="showInfo(marker, poi.id)"
+  ></map-marker>
+  <map-info-window>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ poi.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="poi.imgUrl" />
+      <mat-card-content>
+        <p>{{ poi.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </map-info-window>
 </google-map>
